@@ -1,5 +1,5 @@
 module.exports = (mongoose) => {
-    const Posts = mongoose.model(
+    const Post = mongoose.model(
       'blog_posts',
       mongoose.Schema(
         {
@@ -16,6 +16,6 @@ module.exports = (mongoose) => {
       )
     );
   
-    return Posts;
+    return Post;
   };
   

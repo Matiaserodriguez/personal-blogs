@@ -5,6 +5,6 @@ const blogPosts = require('./blogPosts');
 
 
 routes.use('/users', users);
-// routes.use('/blogPosts', blogPosts);
+routes.use('/blogPosts', blogPosts);
 
 module.exports = routes;

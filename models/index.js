@@ -7,6 +7,6 @@ const db = {};
 db.mongoose = mongoose;
 db.url = dbConfig.url;
 db.users = require('./users.js')(mongoose);
-db.blogPosts = require('./blogPosts.js')(mongoose);
+db.blogPost = require('./blogPosts.js')(mongoose);
 
 module.exports = db;
