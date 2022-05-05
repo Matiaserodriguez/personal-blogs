@@ -47,6 +47,7 @@ exports.putPost = async(req, res) => {
                 return
             }
             res.status(200).json(postToUpdate);
+            return
         } catch(e) {
             console.log(e)
             res.status(400).json({status: 400, msg: 'Verify the ID is a valid one'});
