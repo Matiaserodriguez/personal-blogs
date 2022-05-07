@@ -2,9 +2,13 @@ const db = require('../models');
 const Post = db.blogPost;
 
 exports.getAllPosts = async (req, res) => {
-    const allPosts = await Post.find({}, { _id: 0 });
-
-    res.status(200).json(allPosts);
+    try{
+        const allPosts = await Post.find({}, { _id: 0 });
+        res.status(200).json(allPosts);
+    } catch(e) {
+        console.log(e);
+        res.status(400).json({status: 400, msg: 'Something went wrong, please try again'});
+    }
 };
 
 exports.postPost = async (req, res) => {
@@ -17,15 +21,9 @@ exports.postPost = async (req, res) => {
     };
 
     try {    
-        const newPost = new Post({
-            postName: body.postName,
-            postInfo: body.postInfo,
-            writtenBy: body.writtenBy,
-            comments: body.comments,
-            donations: body.donations
-        });
-    
+        const newPost = new Post(body);
         let post = await newPost.save(newPost);   
+
         res.status(200).json(post);
     } catch(e){
         console.log(e)
