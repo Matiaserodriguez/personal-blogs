@@ -1,5 +1,10 @@
 const db = require('../models');
 const User = db.users;
+const { getOauthUrl } = require('../helpers/googleURI');
+
+exports.getOauthUser = (req, res) => {
+    res.redirect(getOauthUrl())
+}
 
 exports.getAllUsers = async (req, res) => {
     try{
@@ -40,7 +45,7 @@ exports.putUser = async(req, res) => {
     const body = req.body
 
     if (body.userName || body.email || body.password) {
-        
+
         try{
             let userToUpdate = await User.updateOne({ _id: req.params.id }, body);
 

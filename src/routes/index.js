@@ -5,9 +5,13 @@ const swaggerDocument = require('../../swagger-output.json');
 
 const users = require('./users');
 const blogPosts = require('./blogPosts');
+const oauth = require('./oauth');
+const accessToken = require('./accessToken')
 
 
 routes.use('/users', users);
+routes.use('/login/oauth/authorize', oauth);
+routes.use('/api/session', accessToken)
 routes.use('/blogPosts', blogPosts);
 
 // Swagger routes
