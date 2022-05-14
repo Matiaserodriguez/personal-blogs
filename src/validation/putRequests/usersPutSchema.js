@@ -9,8 +9,5 @@ exports.putUserSchema = Joi.object()
         .min(3)
         .max(40),
     email: Joi.string()
-        .email(),
-    password: Joi.string()
-        .min(8)
-        .max(40),
+        .email()
   })  
