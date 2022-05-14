@@ -47,6 +47,24 @@
             "in": "header",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "fisrtName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -74,6 +92,24 @@
             "in": "header",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "fisrtName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -139,6 +175,30 @@
             "in": "header",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "postName": {
+                  "example": "any"
+                },
+                "postInfo": {
+                  "example": "any"
+                },
+                "writtenBy": {
+                  "example": "any"
+                },
+                "comments": {
+                  "example": "any"
+                },
+                "donations": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -166,6 +226,30 @@
             "in": "header",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "postName": {
+                  "example": "any"
+                },
+                "postInfo": {
+                  "example": "any"
+                },
+                "writtenBy": {
+                  "example": "any"
+                },
+                "comments": {
+                  "example": "any"
+                },
+                "donations": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
