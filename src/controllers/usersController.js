@@ -17,13 +17,7 @@ exports.getAllUsers = async (req, res) => {
 }
 
 exports.postUser = async (req, res) => {
-
     const body = req.body
-
-    if(!body.userName || !body.email || !body.password) {
-        res.status(400).json({status: 400, msg: 'Include userName, email and password'});
-        return
-    };
 
     try {
         const newUser = new User(body);
@@ -41,10 +35,7 @@ exports.postUser = async (req, res) => {
 };
 
 exports.putUser = async(req, res) => {
-
     const body = req.body
-
-    if (body.userName || body.email || body.password) {
 
         try{
             let userToUpdate = await User.updateOne({ _id: req.params.id }, body);
@@ -62,11 +53,6 @@ exports.putUser = async(req, res) => {
             res.status(400).json({status: 400, msg: 'Verify the ID is a valid one'});
             return
         }
-
-    }
-
-    res.status(400).json({status: 400, msg: 'Include userName, email and/or password'});
-    return
 };
 
 exports.deleteUser = async(req, res) => {
