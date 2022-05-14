@@ -2,7 +2,11 @@ const Joi = require('joi');
 
 exports.postUserSchema = Joi.object()
   .keys({
-    userName: Joi.string()
+    firstName: Joi.string()
+        .min(3)
+        .max(40)
+        .required(),
+    lastName: Joi.string()
         .min(3)
         .max(40)
         .required(),

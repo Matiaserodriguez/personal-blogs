@@ -10,14 +10,32 @@
   "schemes": [
     "https"
   ],
+  "securityDefinitions": {
+    "oauth": {
+      "type": "oauth2",
+      "authorizationUrl": "http://cse341-personal-blog.herokuapp.com/login/oauth/authorize",
+      "description":  "INSTRUCTIONS: 1) Click Authorize. 2) Authenticate with your account. 3) Get your access_token and copy it. 4) Paste it into any request you make.",
+      "flow": "Follow instructions"
+    }
+  },  
   "paths": {
     "/users/": {
       "get": {
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       },
@@ -25,22 +43,10 @@
         "description": "",
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "userName": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
-                "password": {
-                  "example": "any"
-                }
-              }
-            }
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -64,22 +70,10 @@
             "type": "string"
           },
           {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "userName": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
-                "password": {
-                  "example": "any"
-                }
-              }
-            }
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -99,6 +93,12 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -114,10 +114,20 @@
     "/blogPosts/": {
       "get": {
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
           }
         }
       },
@@ -125,28 +135,10 @@
         "description": "",
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "postName": {
-                  "example": "any"
-                },
-                "postInfo": {
-                  "example": "any"
-                },
-                "writtenBy": {
-                  "example": "any"
-                },
-                "comments": {
-                  "example": "any"
-                },
-                "donations": {
-                  "example": "any"
-                }
-              }
-            }
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -170,28 +162,10 @@
             "type": "string"
           },
           {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "postName": {
-                  "example": "any"
-                },
-                "postInfo": {
-                  "example": "any"
-                },
-                "writtenBy": {
-                  "example": "any"
-                },
-                "comments": {
-                  "example": "any"
-                },
-                "donations": {
-                  "example": "any"
-                }
-              }
-            }
+            "name": "authorization",
+            "in": "header",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -209,6 +183,12 @@
           {
             "name": "id",
             "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
             "required": true,
             "type": "string"
           }
